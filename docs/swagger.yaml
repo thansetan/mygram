@@ -1,0 +1,1547 @@
+definitions:
+  dto.CommentCreate:
+    properties:
+      message:
+        example: buset ganteng banget nih fotonya
+        type: string
+    type: object
+  dto.CommentCreateResponse:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      message:
+        type: string
+      photo_id:
+        type: integer
+      user_id:
+        type: integer
+    type: object
+  dto.CommentGetByPhotoIDResponse:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      message:
+        type: string
+      photo_id:
+        type: integer
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/dto.User'
+      user_id:
+        type: integer
+    type: object
+  dto.CommentGetByUserIDResponse:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      message:
+        type: string
+      photo:
+        $ref: '#/definitions/dto.Photo'
+      photo_id:
+        type: integer
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  dto.CommentResponse:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      message:
+        type: string
+      photo:
+        $ref: '#/definitions/dto.Photo'
+      photo_id:
+        type: integer
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/dto.User'
+      user_id:
+        type: integer
+    type: object
+  dto.CommentUpdate:
+    properties:
+      message:
+        example: buset ganteng banget nih fotonya sumpah asli riil
+        type: string
+    type: object
+  dto.CommentUpdateResponse:
+    properties:
+      id:
+        type: integer
+      message:
+        type: string
+      photo_id:
+        type: integer
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  dto.LikeCreateResponse:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      photo_id:
+        type: integer
+      user_id:
+        type: integer
+    type: object
+  dto.LikeResponse:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      photo_id:
+        type: integer
+      user:
+        $ref: '#/definitions/dto.User'
+      user_id:
+        type: integer
+    type: object
+  dto.Photo:
+    properties:
+      caption:
+        type: string
+      id:
+        type: integer
+      photo_url:
+        type: string
+      title:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  dto.PhotoCreate:
+    properties:
+      caption:
+        example: Ini adalah foto Budi yang sangat ganteng
+        type: string
+      photo_url:
+        example: https://www.budiganteng.com/gambarnya-budi-ganteng.jpg
+        type: string
+      title:
+        example: Gambarnya Budi Ganteng
+        type: string
+    type: object
+  dto.PhotoCreateResponse:
+    properties:
+      caption:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      photo_url:
+        type: string
+      title:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  dto.PhotoResponse:
+    properties:
+      caption:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      photo_url:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/dto.User'
+      user_id:
+        type: integer
+    type: object
+  dto.PhotoUpdate:
+    properties:
+      caption:
+        example: Ini adalah foto Budi yang sangat ganteng banget sumpah asli riil
+        type: string
+      photo_url:
+        example: https://www.budiganteng.com/ganteng.jpg
+        type: string
+      title:
+        example: Gambarnya Budi Ganteng Banget Sumpah Asli Riil
+        type: string
+    type: object
+  dto.PhotoUpdateResponse:
+    properties:
+      caption:
+        type: string
+      id:
+        type: integer
+      photo_url:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  dto.SocialMediaCreate:
+    properties:
+      name:
+        example: Twitter
+        type: string
+      social_media_url:
+        example: https://twitter.com/budiganteng
+        type: string
+    type: object
+  dto.SocialMediaCreateResponse:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      social_media_url:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  dto.SocialMediaGetByUserIDResponse:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      social_media_url:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  dto.SocialMediaResponse:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      social_media_url:
+        type: string
+      updated_at:
+        type: string
+      user:
+        $ref: '#/definitions/dto.User'
+      user_id:
+        type: integer
+    type: object
+  dto.SocialMediaUpdate:
+    properties:
+      name:
+        example: X
+        type: string
+      social_media_url:
+        example: https://x.com/budiganteng
+        type: string
+    type: object
+  dto.SocialMediaUpdateResponse:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      social_media_url:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  dto.User:
+    properties:
+      email:
+        type: string
+      id:
+        type: integer
+      username:
+        type: string
+    type: object
+  dto.UserCreateResponse:
+    properties:
+      age:
+        type: integer
+      email:
+        type: string
+      id:
+        type: integer
+      username:
+        type: string
+    type: object
+  dto.UserLogin:
+    properties:
+      email:
+        example: budiganteng@rocketmail.com
+        type: string
+      password:
+        example: budiganteng123
+        type: string
+    type: object
+  dto.UserLoginResponse:
+    properties:
+      token:
+        type: string
+    type: object
+  dto.UserRegister:
+    properties:
+      age:
+        example: 20
+        type: integer
+      email:
+        example: budiganteng@rocketmail.com
+        type: string
+      password:
+        example: budiganteng123
+        type: string
+      username:
+        example: budiganteng
+        type: string
+    type: object
+  dto.UserUpdate:
+    properties:
+      email:
+        example: budigantengbanget@rocketmail.com
+        type: string
+      username:
+        example: budigantengbanget
+        type: string
+    type: object
+  dto.UserUpdateResponse:
+    properties:
+      age:
+        type: integer
+      email:
+        type: string
+      id:
+        type: integer
+      updated_at:
+        type: string
+      username:
+        type: string
+    type: object
+  helper.ResponseError:
+    type: object
+  response.Response-any:
+    properties:
+      data: {}
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-array_dto_CommentGetByPhotoIDResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/dto.CommentGetByPhotoIDResponse'
+        type: array
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-array_dto_CommentGetByUserIDResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/dto.CommentGetByUserIDResponse'
+        type: array
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-array_dto_CommentResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/dto.CommentResponse'
+        type: array
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-array_dto_PhotoResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/dto.PhotoResponse'
+        type: array
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-array_dto_SocialMediaResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/dto.SocialMediaResponse'
+        type: array
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_CommentCreateResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.CommentCreateResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_CommentResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.CommentResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_CommentUpdateResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.CommentUpdateResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_PhotoCreateResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.PhotoCreateResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_PhotoResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.PhotoResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_PhotoUpdateResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.PhotoUpdateResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_SocialMediaCreateResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.SocialMediaCreateResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_SocialMediaGetByUserIDResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.SocialMediaGetByUserIDResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_SocialMediaResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.SocialMediaResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_SocialMediaUpdateResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.SocialMediaUpdateResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_UserCreateResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.UserCreateResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_UserLoginResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.UserLoginResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  response.Response-dto_UserUpdateResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.UserUpdateResponse'
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+info:
+  contact: {}
+  description: MyGram (submission for Hacktiv8-Golang final-project)
+  title: MyGram
+  version: "1.0"
+paths:
+  /comments:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-array_dto_CommentResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: get all comments
+      tags:
+      - Comment
+  /comments/{commentID}:
+    delete:
+      parameters:
+      - description: comment ID
+        in: path
+        name: commentID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: delete a comment
+      tags:
+      - Comment
+    get:
+      parameters:
+      - description: comment ID
+        in: path
+        name: commentID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-dto_CommentResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: get a comment by ID
+      tags:
+      - Comment
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: comment ID
+        in: path
+        name: commentID
+        required: true
+        type: integer
+      - description: required body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CommentUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-dto_CommentUpdateResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: update a comment
+      tags:
+      - Comment
+  /comments/my:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-array_dto_CommentGetByUserIDResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: get current user's comments
+      tags:
+      - Comment
+  /likes/my:
+    get:
+      description: Get list of photo that user liked
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-array_dto_PhotoResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: Get list of photo that user liked
+      tags:
+      - Like
+  /photos:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-array_dto_PhotoResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: get all photos
+      tags:
+      - Photo
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: required body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.PhotoCreate'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/response.Response-dto_PhotoCreateResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: create a new photo
+      tags:
+      - Photo
+  /photos/{photoID}:
+    delete:
+      parameters:
+      - description: photo id
+        in: path
+        name: photoID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: delete a photo
+      tags:
+      - Photo
+    get:
+      parameters:
+      - description: photo id
+        in: path
+        name: photoID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-dto_PhotoResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: get a photo by id
+      tags:
+      - Photo
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: photo id
+        in: path
+        name: photoID
+        required: true
+        type: integer
+      - description: required body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.PhotoUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-dto_PhotoUpdateResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: update a photo
+      tags:
+      - Photo
+  /photos/{photoID}/comments:
+    get:
+      parameters:
+      - description: photo ID
+        in: path
+        name: photoID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-array_dto_CommentGetByPhotoIDResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: get all comments by photo ID
+      tags:
+      - Comment
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: required body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CommentCreate'
+      - description: photo ID
+        in: path
+        name: photoID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/response.Response-dto_CommentCreateResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: create a new comment
+      tags:
+      - Comment
+  /photos/{photoID}/likes:
+    delete:
+      description: Delete a like
+      parameters:
+      - description: Photo ID
+        in: path
+        name: photoID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: boolean
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+      security:
+      - BearerToken: []
+      summary: Delete a like
+      tags:
+      - Like
+    get:
+      description: Get likes by photo ID
+      parameters:
+      - description: Photo ID
+        in: path
+        name: photoID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.LikeResponse'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+      security:
+      - BearerToken: []
+      summary: Get likes by photo ID
+      tags:
+      - Like
+    post:
+      description: Create a like
+      parameters:
+      - description: Photo ID
+        in: path
+        name: photoID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.LikeCreateResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+      security:
+      - BearerToken: []
+      summary: Create a like
+      tags:
+      - Like
+  /photos/my:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-array_dto_PhotoResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: get current user's photos
+      tags:
+      - Photo
+  /socialmedias:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-array_dto_SocialMediaResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: get all social media
+      tags:
+      - Social Media
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: required body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.SocialMediaCreate'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/response.Response-dto_SocialMediaCreateResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: create a new social media
+      tags:
+      - Social Media
+  /socialmedias/{socialMediaID}:
+    delete:
+      parameters:
+      - description: social media ID
+        in: path
+        name: socialMediaID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: delete social media
+      tags:
+      - Social Media
+    get:
+      parameters:
+      - description: social media ID
+        in: path
+        name: socialMediaID
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-dto_SocialMediaResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: get social media by ID
+      tags:
+      - Social Media
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: social media ID
+        in: path
+        name: socialMediaID
+        required: true
+        type: integer
+      - description: required body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.SocialMediaUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-dto_SocialMediaUpdateResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: update social media
+      tags:
+      - Social Media
+  /socialmedias/my:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-dto_SocialMediaGetByUserIDResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: get my social media
+      tags:
+      - Social Media
+  /users:
+    delete:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: delete user
+      tags:
+      - User
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: required body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UserUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-dto_UserUpdateResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: update user
+      tags:
+      - User
+  /users/{username}/photos:
+    get:
+      parameters:
+      - description: username
+        in: path
+        name: username
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-array_dto_PhotoResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      security:
+      - BearerToken: []
+      summary: get all photos by username
+      tags:
+      - Photo
+  /users/login:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: required body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UserLogin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-dto_UserLoginResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      summary: login user
+      tags:
+      - User
+  /users/register:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: required body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UserRegister'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/response.Response-dto_UserCreateResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/response.Response-any'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      summary: register a new user
+      tags:
+      - User
+securityDefinitions:
+  BearerToken:
+    description: 'Bearer token for authentication. Format: Bearer {token}'
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
